@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的作品集 - 首頁</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <div class="logo">Min-An's Portfolio</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-overlay" id="navOverlay"></div>
+        <nav class="nav" id="mainNav">
+          <a href="index.html" class="nav-link active" data-i18n="nav.home">首頁</a>
+          <a href="about.html" class="nav-link" data-i18n="nav.about">關於我</a>
+          <a href="works.html" class="nav-link" data-i18n="nav.works">作品集</a>
+          <a href="gallery.html" class="nav-link" data-i18n="nav.gallery">圖片集</a>
+          <!-- 第一版暫時隱藏留言互動功能 -->
+          <!-- <a href="contact.html" class="nav-link" data-i18n="nav.contact">留言互動</a> -->
+          <!-- 第一版暫時隱藏語言切換功能 -->
+          <!-- <div class="lang-switch">
+            <button class="lang-btn active" data-lang="zh">中</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div> -->
+        </nav>
+      </div>
+    </header>
+
+    <main class="container container-home">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>
+            <span data-i18n="home.hero.title">你好，我是</span>
+            <span class="accent">Min An</span>
+          </h1>
+          <p class="hero-title-role" data-i18n="home.hero.subtitle">
+            一位專注於打造優質使用者體驗的前端 / 全端工程師。
+          </p>
+          <p class="hero-subtitle" data-i18n="home.hero.subtitle2">
+            一位專注於打造優質使用者體驗的前端 / 全端工程師。
+          </p>
+          <p class="hero-description" data-i18n="home.hero.desc">
+            這裡整理了我的工作經歷、代表作品與聯絡方式，歡迎逛逛，也可以在留言頁和我互動。
+          </p>
+          <div class="hero-actions">
+            <a href="works.html" class="btn primary" data-i18n="home.hero.viewWorks"
+              >查看作品</a
+            >
+            <!-- 第一版暫時隱藏前往留言按鈕 -->
+            <!-- <a href="contact.html" class="btn ghost" data-i18n="home.hero.goContact"
+              >前往留言</a
+            > -->
+          </div>
+        </div>
+        <div class="canvas-pane">
+          <div class="canvas-header">
+            <h2 class="canvas-title">靈感實驗室</h2>
+            <p class="canvas-subtitle">
+              存下自己的設計吧：）
+            </p>
+          </div>
+          <div class="canvas-body">
+            <div class="canvas-wrapper">
+              <canvas id="drawCanvas"></canvas>
+            </div>
+            <div class="canvas-tool-dock">
+              <div class="tool-brush-control" title="筆刷設定">
+                <label class="tool-btn color-btn" title="顏色">
+                  <input type="color" id="brushColor" value="#8b6f47" />
+                  <div class="size-circle" id="sizeCircle"></div>
+                </label>
+                <input
+                  type="range"
+                  id="brushSize"
+                  class="vertical-range"
+                  min="2"
+                  max="20"
+                  value="6"
+                />
+              </div>
+              <button
+                id="clearCanvas"
+                class="tool-btn"
+                type="button"
+                title="清除畫布"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 5C9 6.10457 8.10457 7 7 7" stroke="currentColor"/>
+                  <path d="M11 7C9.89543 7 9 6.10457 9 5" stroke="currentColor"/>
+                  <path d="M9 9C9 7.89543 9.89543 7 11 7" stroke="currentColor"/>
+                  <path d="M7 7C8.10457 7 9 7.89543 9 9" stroke="currentColor"/>
+                  <path d="M6 10C6 11.1046 5.10457 12 4 12" stroke="currentColor"/>
+                  <path d="M8 12C6.89543 12 6 11.1046 6 10" stroke="currentColor"/>
+                  <path d="M6 14C6 12.8954 6.89543 12 8 12" stroke="currentColor"/>
+                  <path d="M4 12C5.10457 12 6 12.8954 6 14" stroke="currentColor"/>
+                  <path d="M11.9429 12.2832L17.9429 14.7832M17.93 15.2915L18.3057 14.3648C18.7206 13.3411 18.2272 12.1749 17.2035 11.7599L14.4233 10.6329C13.3996 10.2179 12.2334 10.7114 11.8184 11.7351L11.4427 12.6618C10.9424 13.7829 10.4428 14.2832 9.94277 14.7832C9.44299 15.2829 7.94304 16.2832 7.44287 16.2832C7.94287 16.7832 8.746 17.4838 9.94242 17.7829C11.5424 18.1829 12.9424 18.2829 13.4424 18.2829L12.9428 19.7832C13.2761 19.9498 14.6986 19.7793 15.4428 19.2832C16.9428 18.2832 17.2675 16.622 17.93 15.2915Z" stroke="currentColor" stroke-linejoin="round"/>
+                  <path d="M16.7402 11.2294L16.928 10.766C17.1355 10.2542 16.8888 9.67104 16.3769 9.46356C15.8651 9.25608 15.282 9.50281 15.0745 10.0146L14.8867 10.478" stroke="currentColor"/>
+                  <path d="M16.5298 9.15096L17.8071 6" stroke="currentColor" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <button
+                id="downloadCanvas"
+                class="tool-btn"
+                type="button"
+                title="下載畫布"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 6V15.0357M12 15.0357L7.6 10.7143M12 15.0357L16.4 10.7143M6 17H18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        © <span id="year"></span> minan by vibe coding
+      </p>
+    </footer>
+
+    <script src="lang.js"></script>
+    <script src="draw.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      
+      // 側邊欄控制
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      const navOverlay = document.getElementById("navOverlay");
+      
+      function toggleNav() {
+        mainNav.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+        if (navOverlay) {
+          navOverlay.classList.toggle("active");
+        }
+      }
+      
+      function closeNav() {
+        mainNav.classList.remove("active");
+        menuToggle.classList.remove("active");
+        if (navOverlay) {
+          navOverlay.classList.remove("active");
+        }
+      }
+      
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener("click", toggleNav);
+        
+        if (navOverlay) {
+          navOverlay.addEventListener("click", closeNav);
+        }
+        
+        // 點擊導航連結時關閉側邊欄
+        mainNav.querySelectorAll(".nav-link").forEach(link => {
+          link.addEventListener("click", closeNav);
+        });
+      }
+    </script>
+  </body>
+  </html>
+
+
