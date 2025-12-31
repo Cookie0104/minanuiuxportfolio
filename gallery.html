@@ -278,7 +278,7 @@
             badge: ["UI Design", "Front-end"],
             popupVideos: [
               "img/gallery/program/screen1.mov",
-              "img/gallery/program/screen2.mov"
+              "img/gallery/program/screen2.mp4"
             ]
           },
           {
@@ -475,48 +475,48 @@
       }
 
       // 設置同一列圖片的高度
-      function setRowHeights() {
-        const containers = document.querySelectorAll('.gallery-popup-container');
-        containers.forEach(container => {
-          // 跳過「品牌DM設計」的圖片，讓它們使用自然高度
-          const modalTitle = document.getElementById("modalTitle");
-          if (modalTitle && modalTitle.textContent === "品牌DM設計") {
-            return;
-          }
+      // function setRowHeights() {
+      //   const containers = document.querySelectorAll('.gallery-popup-container');
+      //   containers.forEach(container => {
+      //     // 跳過「品牌DM設計」的圖片，讓它們使用自然高度
+      //     const modalTitle = document.getElementById("modalTitle");
+      //     if (modalTitle && modalTitle.textContent === "品牌DM設計") {
+      //       return;
+      //     }
           
-          const images = container.querySelectorAll('.gallery-popup-image');
-          if (images.length > 1) {
-            let maxHeight = 0;
-            images.forEach(img => {
-              const imgElement = img.querySelector('img');
-              if (imgElement) {
-                imgElement.onload = () => {
-                  images.forEach(i => {
-                    const imgEl = i.querySelector('img');
-                    if (imgEl) {
-                      const naturalHeight = imgEl.naturalHeight;
-                      const naturalWidth = imgEl.naturalWidth;
-                      const aspectRatio = naturalWidth / naturalHeight;
-                      const containerWidth = i.offsetWidth;
-                      const calculatedHeight = containerWidth / aspectRatio;
-                      if (calculatedHeight > maxHeight) {
-                        maxHeight = calculatedHeight;
-                      }
-                    }
-                  });
-                  images.forEach(i => {
-                    i.style.height = maxHeight + 'px';
-                    const imgEl = i.querySelector('img');
-                    if (imgEl) {
-                      imgEl.style.height = maxHeight + 'px';
-                    }
-                  });
-                };
-              }
-            });
-          }
-        });
-      }
+      //     const images = container.querySelectorAll('.gallery-popup-image');
+      //     if (images.length > 1) {
+      //       let maxHeight = 0;
+      //       images.forEach(img => {
+      //         const imgElement = img.querySelector('img');
+      //         if (imgElement) {
+      //           imgElement.onload = () => {
+      //             images.forEach(i => {
+      //               const imgEl = i.querySelector('img');
+      //               if (imgEl) {
+      //                 const naturalHeight = imgEl.naturalHeight;
+      //                 const naturalWidth = imgEl.naturalWidth;
+      //                 const aspectRatio = naturalWidth / naturalHeight;
+      //                 const containerWidth = i.offsetWidth;
+      //                 const calculatedHeight = containerWidth / aspectRatio;
+      //                 if (calculatedHeight > maxHeight) {
+      //                   maxHeight = calculatedHeight;
+      //                 }
+      //               }
+      //             });
+      //             images.forEach(i => {
+      //               i.style.height = maxHeight + 'px';
+      //               const imgEl = i.querySelector('img');
+      //               if (imgEl) {
+      //                 imgEl.style.height = maxHeight + 'px';
+      //               }
+      //             });
+      //           };
+      //         }
+      //       });
+      //     }
+      //   });
+      // }
 
       function openUIModal(itemIndex) {
         const item = galleryData.ui[itemIndex];

@@ -31,19 +31,20 @@
   --color-border-dark: rgba(210, 189, 157, 0.4);
   
   /* 字體系統 */
-  --font-family-base: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-base: "PingFang TC","Noto Sans TC",  "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
   /* 字體大小 - 文青風格，更精緻小巧 */
-  --font-size-xs: 0.7rem;
-  --font-size-sm: 0.8rem;
-  --font-size-base: 0.9rem;
-  --font-size-lg: 1rem;
-  --font-size-xl: 1.1rem;
-  --font-size-2xl: 1.3rem;
-  --font-size-3xl: 1.6rem;
-  --font-size-4xl: 2rem;
-  --font-size-5xl: 2.2rem;
+  --font-size-xs: 1.0rem;
+  --font-size-sm: 1.1rem;
+  --font-size-base: 1.2rem;
+  --font-size-lg: 1.3rem;
+  --font-size-xl: 1.4rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.8rem;
+  --font-size-4xl: 2.6rem;
+  --font-size-5xl: 3.0rem;
+  --font-size-title: 3.2rem;
   
   /* 間距系統 */
   --spacing-xs: 0.25rem;
@@ -94,7 +95,7 @@ body {
 
 b,
 strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* ============================================
@@ -280,12 +281,12 @@ strong {
 
 /* 首頁設置最大寬度 */
 .container-home {
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 /* 除了首頁外的其他頁面設置最大寬度 */
 .container-page {
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .page-header {
@@ -295,9 +296,9 @@ strong {
 }
 
 .page-header h1 {
-  font-size: 40px;
+  font-size: var(--font-size-title);
   margin-bottom: var(--spacing-sm);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 1.4;
   background: linear-gradient(135deg, #8b5a36 0%, #a67c52 25%, #c4a882 50%, #a67c52 75%, #8b5a36 100%);
@@ -312,10 +313,10 @@ strong {
 .page-header p {
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 0;
   line-height: 1.8;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .page-header p[data-i18n="about.subtitle2"] {
@@ -435,7 +436,7 @@ strong {
 
 .hero-subtitle b,
 .hero-subtitle strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .hero-description {
@@ -541,7 +542,7 @@ strong {
 }
 
 section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   color: var(--color-primary);
   margin-bottom: var(--spacing-xs);
   font-weight: 700;
@@ -766,12 +767,13 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
   background: var(--color-bg-card);
   border-radius: var(--radius-lg);
   padding: 0;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xl);
   transition: all var(--transition-base);
   cursor: pointer;
   border: 1px solid var(--color-border-light);
   position: relative;
   overflow: hidden;
+  
 }
 
 /* 漸層邊框效果 */
@@ -795,7 +797,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-2xl);
   border-color: var(--color-primary);
 }
 
@@ -806,7 +808,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 360px;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   margin-bottom: 0;
@@ -815,11 +817,11 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
 }
 
 #galleryContainer .card-image {
-  height: 160px;
+  height: 250px;
 }
 
 #galleryContainer .card-title {
-  font-size: 16px;
+  font-size: var(--font-size-xl);
 }
 
 .card-image::after {
@@ -868,7 +870,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
   background: linear-gradient(135deg, rgba(139, 90, 54, 0.08) 0%, rgba(166, 124, 82, 0.12) 100%);
   color: var(--color-primary);
   border-radius: var(--radius-sm);
-  font-size: 0.55rem;
+  font-size: var(--font-size-xs);
   font-weight: 500;
   letter-spacing: 0.05em;
   border: 1px solid rgba(139, 90, 54, 0.15);
@@ -902,7 +904,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
   flex-wrap: wrap;
   gap: var(--spacing-sm);
   list-style: none;
-  padding: 0;
+  padding: 16px 0;
   margin: 0;
 }
 
@@ -911,7 +913,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
   background: rgba(210, 189, 157, 0.15);
   color: var(--color-text-secondary);
   border-radius: var(--radius-sm);
-  font-size: 0.55rem;
+  font-size: var(--font-size-xs);
   font-weight: 300;
   transition: all var(--transition-base);
 }
@@ -950,7 +952,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2.canvas-title {
 
 .grid-2 p b,
 .grid-2 p strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* 其他區塊樣式（與 grid-2 一致） */
@@ -963,8 +965,9 @@ section:not(.grid-2):not(.timeline):not(.page-header) h2 {
 }
 
 section:not(.grid-2):not(.timeline):not(.page-header) h2.card-title{
-  font-size: 20px;
+  font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-sm);
+  line-height: 2.4;
 }
 
 
@@ -981,7 +984,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) p.card-desc{
 }
 
 section:not(.grid-2):not(.timeline):not(.page-header) p.hero-title-role{
-font-size: 14px; margin-bottom: var(--spacing-xl);
+font-size: var(--font-size-sm);; margin-bottom: var(--spacing-xl);
 }
 
 .skill-list {
@@ -1122,7 +1125,7 @@ font-size: 14px; margin-bottom: var(--spacing-xl);
 
 .timeline-content p b,
 section:not(.grid-2):not(.timeline):not(.page-header) p b {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .timeline-content p:has(strong) {
@@ -1148,7 +1151,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) p b {
 
 .timeline-content ul li b,
 .timeline-content ul li strong {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .timeline-content ul li::before {
@@ -1970,7 +1973,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) p b {
   background: linear-gradient(135deg, rgba(139, 90, 54, 0.08) 0%, rgba(166, 124, 82, 0.12) 100%);
   color: var(--color-primary);
   border-radius: var(--radius-sm);
-  font-size: 0.55rem;
+  font-size: var(--font-size-xs);
   font-weight: 500;
   letter-spacing: 0.05em;
   border: 1px solid rgba(139, 90, 54, 0.15);
@@ -1978,7 +1981,7 @@ section:not(.grid-2):not(.timeline):not(.page-header) p b {
 
 .modal-title {
   margin: 0;
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-title);
   color: var(--color-primary);
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -2011,13 +2014,13 @@ h3.modal-sidebar-title {
 
 .modal-body p {
   margin: 0 0 var(--spacing-sm);
-  font-size: 13px;
+  font-size: var(--font-size-sm);
   line-height: 1.9;
   font-weight: 300;
 }
 
 .modal-body .thought-provoking-question {
-  font-size: 15px;
+  font-size: var(--font-size-base);
   font-weight: 500;
   color: var(--color-primary);
   font-style: italic;
@@ -2043,7 +2046,7 @@ h3.modal-sidebar-title {
 .modal-body ul li {
   margin-bottom: var(--spacing-xs);
   line-height: 1.8;
-  font-size: 13px;
+  font-size: var(--font-size-sm);
 }
 
 .modal-body h4 {
@@ -2102,7 +2105,7 @@ h3.modal-sidebar-title {
 .project-results-highlight ul li {
   position: relative;
   padding-left: 0;
-  font-size: 13px;
+  font-size: var(--font-size-sm);
 }
 
 .project-results-highlight ul li::before {
@@ -2133,7 +2136,7 @@ h3.modal-sidebar-title {
 
 .project-image .image-caption {
   margin: var(--spacing-xs) 0 0 0;
-  font-size: 0.75rem;
+  font-size: var(--font-size-xs);
   color: rgba(122, 113, 98, 0.6);
   font-weight: 400;
   line-height: 1.5;
